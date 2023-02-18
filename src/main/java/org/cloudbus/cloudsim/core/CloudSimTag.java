@@ -361,7 +361,13 @@ public enum CloudSimTag implements Comparable<CloudSimTag> {
      * When such a {@link SimEvent} is sent, the {@link SimEvent#getData()}
      * must be a {@link Host} object.
      */
-    HOST_POWER_OFF;
+    HOST_POWER_OFF,
+
+    /**
+     * Denotes a tag for submitting the next batch of VM requests to the 
+     * {@link DatacenterBroker}. See {@link TracesBatchesManager} for more details.
+     */
+	BATCH_TAG;
 
     private final int priority;
 

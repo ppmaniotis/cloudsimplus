@@ -91,7 +91,7 @@ public final class HostSuitability {
      * @param suitable true to indicate it's suitable according to VM's size requirements;
      *                 false otherwise
      * */
-    HostSuitability setForStorage(final boolean suitable) {
+    public HostSuitability setForStorage(final boolean suitable) {
         this.forStorage = suitable;
         return this;
     }
@@ -110,7 +110,7 @@ public final class HostSuitability {
      * @param suitable true to indicate it's suitable according to VM's RAM requirements;
      *                 false otherwise
      * */
-    HostSuitability setForRam(final boolean suitable) {
+    public HostSuitability setForRam(final boolean suitable) {
         this.forRam = suitable;
         return this;
     }
@@ -129,7 +129,7 @@ public final class HostSuitability {
      * @param suitable true to indicate it's suitable according to VM's BW requirements;
      *                 false otherwise
      * */
-    HostSuitability setForBw(final boolean suitable) {
+    public HostSuitability setForBw(final boolean suitable) {
         this.forBw = suitable;
         return this;
     }
@@ -148,7 +148,7 @@ public final class HostSuitability {
      * @param forPes true to indicate it's suitable according to VM's number of PEs requirements;
      *               false otherwise
      * */
-    HostSuitability setForPes(final boolean forPes) {
+    public HostSuitability setForPes(final boolean forPes) {
         this.forPes = forPes;
         return this;
     }

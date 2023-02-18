@@ -221,7 +221,9 @@ public abstract class DatacenterBrokerAbstract extends CloudSimEntity implements
                 getSimulation().clockStr(), getName(), list.size());
             requestDatacentersToCreateWaitingCloudlets();
             if(!vmCreationRetrySent) {
-                lastSelectedDc = null;
+                //lastSelectedDc = null; 
+            	/*FIXME: getting comparison with null errors in requestVmCreation. 
+            	 * Used to work without errors before 7.3.1*/
                 requestDatacenterToCreateWaitingVms(false, false);
             }
         }
@@ -612,7 +614,10 @@ public abstract class DatacenterBrokerAbstract extends CloudSimEntity implements
         //if the VM was successfully created in the requested Datacenter
         if (vm.isCreated()) {
             processSuccessVmCreationInDatacenter(vm);
-            vm.notifyOnHostAllocationListeners();
+            // vm.notifyOnHostAllocationListeners(); 
+            /* FIXME: Notify listeners in the createVM function of the Host. 
+             * Otherwise CloudLets are not created in the VMs.
+             * This was the original behavior but at some point changed. */
         } else {
             vm.setFailed(true);
             if(!vmCreation.isRetryFailedVms()){
